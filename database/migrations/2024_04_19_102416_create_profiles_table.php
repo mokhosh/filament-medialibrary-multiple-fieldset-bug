@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('twitter');
-            $table->text('about');
+            $table->text('about')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
