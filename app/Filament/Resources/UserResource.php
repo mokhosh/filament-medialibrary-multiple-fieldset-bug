@@ -24,6 +24,25 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name'),
+
+                Forms\Components\Grid::make('Profile')
+                    ->columns(2)
+                    ->relationship('profile')
+                    ->schema([
+                        Forms\Components\TextInput::make('twitter')
+                            ->columnSpanFull()
+                            ->required(),
+                        Forms\Components\SpatieMediaLibraryFileUpload::make('avatar')
+                            ->collection('avatar')
+                            ->required(),
+                    ]),
+
+                Forms\Components\Grid::make('About')
+                    ->relationship('profile')
+                    ->schema([
+                        Forms\Components\RichEditor::make('about')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 
