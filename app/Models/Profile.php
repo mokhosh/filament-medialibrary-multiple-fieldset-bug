@@ -27,16 +27,5 @@ class Profile extends Model implements HasMedia
             ->acceptsMimeTypes([
                 'image/jpeg',
             ]);
-
-        $this->addMediaCollection('id_card')
-            ->singleFile()
-            ->acceptsMimeTypes([
-                'image/jpeg',
-            ]);
-
-        $this->addMediaCollection('certificates')
-            ->acceptsMimeTypes([
-                'image/jpeg',
-            ]);
     }
 }
