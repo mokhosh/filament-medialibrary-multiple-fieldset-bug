@@ -35,6 +35,7 @@ class UserResource extends Resource
                         Forms\Components\SpatieMediaLibraryFileUpload::make('avatar')
                             ->collection('avatar')
                             ->required(),
+                        Forms\Components\SpatieTagsInput::make('tags'),
                     ]),
 
                 Forms\Components\Grid::make('About')
